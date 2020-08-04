@@ -14,11 +14,12 @@ class Transfer
   def execute_transaction
     if valid?
       if @status == "pending"
-        puts "SUCCESS"
-        @sender.balance -= @amount
-        @receiver.balance += @amount
-        @status = "complete"
-        "complete"
+        if (@sender - @amount) > 0 
+          puts "SUCCESS"
+          @sender.balance -= @amount
+          @receiver.balance += @amount
+          @status = "complete"
+          "complete"
       else 
         puts "#{@sender.name} NOT PENDING"
         @status = "Transaction rejected. Please check your account balance."
