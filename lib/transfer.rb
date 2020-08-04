@@ -22,13 +22,13 @@ class Transfer
           "complete"
         else
           puts "NOT ENOUGH FUNDS"
-          @status = "Transaction rejected. Please check your account balance."
-        "rejected"
+          @status = "rejected"
+          "Transaction rejected. Please check your account balance."
         end
       else 
         puts "#{@sender.name} NOT PENDING"
-        @status = "Transaction rejected. Please check your account balance."
-        "rejected"
+        @status = "rejected"
+        "Transaction rejected. Please check your account balance."
       end
     else 
       puts "#{@sender.name} NOT VALID"
