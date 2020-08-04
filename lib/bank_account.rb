@@ -17,5 +17,5 @@ class BankAccount
   end
   
   def valid?
-end
+  end
 end
