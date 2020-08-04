@@ -18,6 +18,7 @@ class BankAccount
   
   def valid?
     if @balance > 0 && @status == "open"
+      puts "Account #{@name} has a balance of #{balance} with a status of #{status}"
       return true 
     else
       return false 
