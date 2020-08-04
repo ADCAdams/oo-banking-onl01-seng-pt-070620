@@ -23,7 +23,8 @@ class Transfer
       end
     else 
       puts "#{@sender.name} NOT VALID"
-      @status = "Transaction rejected. Please check your account balance."
+      @status = "rejected"
+      "Transaction rejected. Please check your account balance."
     end
   end
 end
