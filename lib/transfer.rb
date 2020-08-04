@@ -15,23 +15,19 @@ class Transfer
     if valid?
       if @status == "pending"
         if (@sender.balance - @amount) > 0 
-          puts "SUCCESS"
           @sender.balance -= @amount
           @receiver.balance += @amount
           @status = "complete"
-          "complete"
+          
         else
-          puts "NOT ENOUGH FUNDS"
           @status = "rejected"
           "Transaction rejected. Please check your account balance."
         end
-      else 
-        puts "#{@sender.name} NOT PENDING"
+      else
         @status = "rejected"
         "Transaction rejected. Please check your account balance."
       end
     else 
-      puts "#{@sender.name} NOT VALID"
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
     end
